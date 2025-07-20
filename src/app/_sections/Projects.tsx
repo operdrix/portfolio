@@ -121,7 +121,7 @@ const Projects = () => {
   );
 
   return (
-    <Section id="projects" className="bg-gradient-to-b from-muted/20 to-background">
+    <Section id="projects" className="bg-gradient-to-b from-muted/20 to-background relative z-20">
       <div className="text-center mb-16">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

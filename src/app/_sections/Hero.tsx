@@ -25,7 +25,7 @@ const Hero = () => {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
         {/* Badge "Disponible" */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -33,7 +33,7 @@ const Hero = () => {
         >
           <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
           Disponible pour de nouvelles opportunités
-        </motion.div>
+        </motion.div> */}
 
         {/* Titre principal */}
         <motion.h1
@@ -64,7 +64,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
         >
-          Développeur web passionné avec 5 ans d'expérience, spécialisé dans les technologies modernes.
+          Développeur web passionné, spécialisé dans les technologies modernes.
           Actuellement chez EDF, je combine expertise technique et rigueur industrielle.
         </motion.p>
 
@@ -123,7 +123,7 @@ const Hero = () => {
         {/* Bouton scroll */}
         <motion.button
           onClick={scrollToAbout}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 p-3 rounded-full bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300"
+          className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 p-3 rounded-full bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300 z-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.2 }}
