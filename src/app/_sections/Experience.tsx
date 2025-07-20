@@ -177,10 +177,11 @@ const Experience = () => {
               <div className="w-20 h-20 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
                 <Building className="w-10 h-10 text-white" />
               </div>
-              <h4 className="text-lg font-semibold mb-2">Bac+5</h4>
-              <p className="text-muted-foreground mb-2">Développement Full-Stack</p>
-              <p className="text-sm text-muted-foreground">60 crédits ECTS</p>
-              <p className="text-xs text-muted-foreground">Formation professionnelle</p>
+              <h4 className="text-lg font-semibold mb-2">Bachelor</h4>
+              <p className="text-muted-foreground mb-2">Ingénierie du Web</p>
+              <p className="text-sm text-muted-foreground">École ESGI Lyon</p>
+              <p className="text-xs text-muted-foreground">2022 - 2023</p>
+              <p className="text-xs text-primary mt-1">En alternance</p>
             </div>
           </div>
         </Card>

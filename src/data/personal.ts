@@ -61,7 +61,7 @@ export const experiences: Experience[] = [
   },
   {
     id: "esgi-master",
-    title: "Mastère Ingénierie du Web",
+    title: "Mastère 2 en Ingénierie du Web",
     company: "École ESGI Lyon",
     location: "Lyon, France",
     startDate: "2023-09",
@@ -69,7 +69,6 @@ export const experiences: Experience[] = [
     current: true,
     description: [
       "Formation en alternance spécialisée en développement web Full-Stack",
-      "65 jours de cours par an avec 60 crédits ECTS",
       "Projets pratiques, hackathons et challenges techniques",
       "Formation dispensée par des experts du milieu professionnel"
     ],
@@ -78,18 +77,19 @@ export const experiences: Experience[] = [
   },
   {
     id: "esgi-bachelor",
-    title: "Bachelor en développement web",
+    title: "Bachelor Ingénierie du Web",
     company: "École ESGI Lyon",
     location: "Lyon, France",
     startDate: "2022-09",
     endDate: "2023-06",
     current: false,
     description: [
-      "Formation spécialisée en développement web moderne",
-      "Projets pratiques avec technologies actuelles",
-      "Mémoire sur l'optimisation des performances web"
+      "Formation en alternance en développement web et technologies modernes",
+      "Projets pratiques et mise en œuvre de solutions informatiques",
+      "Administration d'environnements système et réseaux",
+      "Développement d'applications web et mobiles"
     ],
-    technologies: ["React", "Vue.js", "Node.js", "TypeScript", "Docker", "Kubernetes", "CI/CD", "SEO", "UX/UI"],
+    technologies: ["HTML/CSS", "JavaScript", "PHP", "MySQL", "Git", "Linux", "Réseaux", "Sécurité"],
     logo: "/esgi-logo.png"
   },
 ];
