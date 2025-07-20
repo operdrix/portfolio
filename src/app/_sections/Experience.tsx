@@ -5,6 +5,7 @@ import Section from '@/components/ui/Section';
 import { experiences } from '@/data/personal';
 import { motion } from 'framer-motion';
 import { Building, Calendar, Clock, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 const Experience = () => {
   const formatDate = (dateString: string) => {
@@ -63,9 +64,11 @@ const Experience = () => {
                       {/* Logo de l'entreprise */}
                       {experience.logo && (
                         <div className="w-12 h-12 rounded-lg bg-muted/50 border border-border/50 flex items-center justify-center flex-shrink-0">
-                          <img
+                          <Image
                             src={experience.logo}
                             alt={`Logo ${experience.company}`}
+                            width={32}
+                            height={32}
                             className="w-8 h-8 object-contain"
                           />
                         </div>
