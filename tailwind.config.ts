@@ -6,7 +6,13 @@ const config: Config = {
     './src/components/**/*.{ts,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'preahvihear': ['Preahvihear', 'sans-serif'],
+        'plus-jakarta-sans': ['var(--font-plus-jakarta-sans)', 'sans-serif'],
+        'poppins': ['var(--font-poppins)', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
