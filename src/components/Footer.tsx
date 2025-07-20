@@ -155,6 +155,22 @@ const Footer = () => {
             <span>© {currentYear} {personalInfo.name}. Tous droits réservés.</span>
             <span className="flex items-center gap-1">
               Fait avec <Heart className="w-4 h-4 text-red-500" /> en France
+              <div className="inline-flex ml-1 relative">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    fill="url(#frenchFlag)"
+                  />
+                  <defs>
+                    <linearGradient id="frenchFlag" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="33%" stopColor="#2563eb" />
+                      <stop offset="33%" stopColor="#ffffff" />
+                      <stop offset="66%" stopColor="#ffffff" />
+                      <stop offset="66%" stopColor="#dc2626" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
             </span>
           </motion.div>
 
