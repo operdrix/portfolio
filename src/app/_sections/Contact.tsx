@@ -4,14 +4,57 @@ import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import Section from '@/components/ui/Section';
 import { personalInfo, socialLinks } from '@/data/personal';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin, MessageSquare, Send } from 'lucide-react';
+import { useState } from 'react';
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Ici tu pourras ajouter la logique d'envoi du formulaire
-    console.log('Formulaire soumis');
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const formData = new FormData(e.currentTarget);
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? '';
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? '';
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? '';
+
+    // Vérification des variables d'environnement
+    if (!serviceId || !templateId || !publicKey) {
+      setSubmitStatus('error');
+      setSubmitMessage('Configuration EmailJS manquante. Veuillez vérifier les variables d\'environnement.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const result = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        e.currentTarget,
+        publicKey
+      );
+
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setSubmitMessage('Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.');
+        e.currentTarget.reset();
+      } else {
+        setSubmitStatus('error');
+        setSubmitMessage('Erreur lors de l\'envoi du message.');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitMessage('Erreur de connexion. Veuillez réessayer.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -183,11 +226,26 @@ const Contact = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full"
+                className="w-full cursor-pointer"
+                disabled={isSubmitting}
               >
                 <Send className="w-5 h-5 mr-2" />
-                Envoyer le message
+                {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
               </Button>
+
+              {/* Message de statut */}
+              {submitStatus !== 'idle' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-4 rounded-lg text-sm ${submitStatus === 'success'
+                    ? 'bg-green-500/10 border border-green-500/20 text-green-400'
+                    : 'bg-red-500/10 border border-red-500/20 text-red-400'
+                    }`}
+                >
+                  {submitMessage}
+                </motion.div>
+              )}
             </form>
           </Card>
         </motion.div>
