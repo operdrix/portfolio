@@ -41,15 +41,18 @@ const Contact = () => {
         publicKey
       );
 
-      if (result.status === 200) {
-        setSubmitStatus('success');
-        setSubmitMessage('Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.');
+      console.log('EmailJS result:', result);
+
+      // Si on arrive ici sans erreur, c'est que l'email a été envoyé avec succès
+      setSubmitStatus('success');
+      setSubmitMessage('Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.');
+
+      // Reset du formulaire avec vérification de sécurité
+      if (e.currentTarget) {
         e.currentTarget.reset();
-      } else {
-        setSubmitStatus('error');
-        setSubmitMessage('Erreur lors de l\'envoi du message.');
       }
     } catch (error) {
+      console.error('EmailJS error:', error);
       setSubmitStatus('error');
       setSubmitMessage('Erreur de connexion. Veuillez réessayer.');
     } finally {
