@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
 
   // Optimisations pour la production
   experimental: {
-    optimizeCss: true,
+    // optimizeCss désactivé car critters est déprécié
+    // optimizeCss: true,
   },
 
   // Headers de sécurité
