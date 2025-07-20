@@ -46,13 +46,13 @@ const Navigation = () => {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
           ? 'bg-background/80 backdrop-blur-md border-b border-border/50'
           : 'bg-transparent'
           }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
