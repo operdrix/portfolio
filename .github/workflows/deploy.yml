@@ -28,7 +28,7 @@ jobs:
         NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
         NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
         
-    - name: Deploy to VPS
+    - name: Prepare VPS directory
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.VPS_HOST }}
@@ -36,16 +36,25 @@ jobs:
         password: ${{ secrets.VPS_PASSWORD }}
         port: ${{ secrets.VPS_PORT }}
         script: |
-          # Arrêter le conteneur existant
+          # Créer le dossier de déploiement avec les bonnes permissions
+          sudo mkdir -p /opt/portfolio-app
+          sudo chown deploy:deploy /opt/portfolio-app
+          sudo chmod 755 /opt/portfolio-app
+          
+          # Arrêter le conteneur existant s'il existe
           cd /opt/portfolio-app
-          docker-compose down || true
+          if [ -f "docker-compose.yml" ]; then
+            docker-compose down || true
+          fi
           
           # Sauvegarder l'ancienne version
           if [ -d "backup" ]; then
             rm -rf backup
           fi
           mkdir -p backup
-          cp -r . backup/$(date +%Y%m%d_%H%M%S) || true
+          if [ -f "package.json" ]; then
+            cp -r . backup/$(date +%Y%m%d_%H%M%S) || true
+          fi
           
           # Nettoyer les anciens builds
           docker system prune -f
@@ -60,6 +69,24 @@ jobs:
         source: "."
         target: "/opt/portfolio-app"
         strip_components: 0
+        overwrite: true
+        rm: true
+        
+    - name: Verify files copied
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USERNAME }}
+        password: ${{ secrets.VPS_PASSWORD }}
+        port: ${{ secrets.VPS_PORT }}
+        script: |
+          cd /opt/portfolio-app
+          echo "📁 Contenu du dossier :"
+          ls -la
+          echo "📄 Vérification des fichiers essentiels :"
+          [ -f "package.json" ] && echo "✅ package.json trouvé" || echo "❌ package.json manquant"
+          [ -f "docker-compose.yml" ] && echo "✅ docker-compose.yml trouvé" || echo "❌ docker-compose.yml manquant"
+          [ -f "Dockerfile" ] && echo "✅ Dockerfile trouvé" || echo "❌ Dockerfile manquant"
         
     - name: Start application
       uses: appleboy/ssh-action@v1.0.3
@@ -73,12 +100,33 @@ jobs:
           
           # Donner les permissions au user deploy
           sudo chown -R deploy:deploy /opt/portfolio-app
+          sudo chmod -R 755 /opt/portfolio-app
+          
+          # Vérifier que Docker est disponible
+          docker --version || exit 1
+          docker-compose --version || exit 1
           
           # Build et démarrer les conteneurs
+          echo "🐳 Démarrage des conteneurs..."
           docker-compose up -d --build
           
+          # Attendre que l'application démarre
+          echo "⏳ Attente du démarrage de l'application..."
+          sleep 15
+          
           # Vérifier que l'application démarre
-          sleep 10
+          echo "🔍 Vérification de la santé de l'application..."
+          for i in {1..5}; do
+            if curl -f http://localhost:3002/api/health; then
+              echo "✅ Application démarrée avec succès"
+              break
+            else
+              echo "⏳ Tentative $i/5 - Application pas encore prête..."
+              sleep 5
+            fi
+          done
+          
+          # Vérification finale
           curl -f http://localhost:3002/api/health || exit 1
           
           # Nettoyer les anciens builds
