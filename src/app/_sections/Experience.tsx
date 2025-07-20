@@ -166,10 +166,11 @@ const Experience = () => {
               <div className="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-10 h-10 text-white" />
               </div>
-              <h4 className="text-lg font-semibold mb-2">Master 2</h4>
+              <h4 className="text-lg font-semibold mb-2">Mastère</h4>
               <p className="text-muted-foreground mb-2">Ingénierie du Web</p>
-              <p className="text-sm text-muted-foreground">École EDSGI Lyon</p>
-              <p className="text-xs text-muted-foreground">2021 - 2023</p>
+              <p className="text-sm text-muted-foreground">École ESGI Lyon</p>
+              <p className="text-xs text-muted-foreground">2023 - 2025</p>
+              <p className="text-xs text-primary mt-1">En alternance</p>
             </div>
 
             <div className="text-center">
@@ -177,9 +178,9 @@ const Experience = () => {
                 <Building className="w-10 h-10 text-white" />
               </div>
               <h4 className="text-lg font-semibold mb-2">Bac+5</h4>
-              <p className="text-muted-foreground mb-2">Développement Web</p>
-              <p className="text-sm text-muted-foreground">Formation continue</p>
-              <p className="text-xs text-muted-foreground">2019 - 2023</p>
+              <p className="text-muted-foreground mb-2">Développement Full-Stack</p>
+              <p className="text-sm text-muted-foreground">60 crédits ECTS</p>
+              <p className="text-xs text-muted-foreground">Formation professionnelle</p>
             </div>
           </div>
         </Card>
