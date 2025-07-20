@@ -74,7 +74,23 @@ export const experiences: Experience[] = [
     ],
     technologies: ["React", "Vue.js", "Node.js", "TypeScript", "Docker", "Kubernetes", "CI/CD", "SEO", "UX/UI"],
     logo: "/esgi-logo.png"
-  }
+  },
+  {
+    id: "esgi-bachelor",
+    title: "Bachelor en développement web",
+    company: "École ESGI Lyon",
+    location: "Lyon, France",
+    startDate: "2022-09",
+    endDate: "2023-06",
+    current: false,
+    description: [
+      "Formation spécialisée en développement web moderne",
+      "Projets pratiques avec technologies actuelles",
+      "Mémoire sur l'optimisation des performances web"
+    ],
+    technologies: ["React", "Vue.js", "Node.js", "TypeScript", "Docker", "Kubernetes", "CI/CD", "SEO", "UX/UI"],
+    logo: "/esgi-logo.png"
+  },
 ];
 
 export const projects: Project[] = [
