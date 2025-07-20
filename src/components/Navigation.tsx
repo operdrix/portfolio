@@ -68,7 +68,7 @@ const Navigation = () => {
             </motion.div>
 
             {/* Navigation desktop */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.name}
@@ -76,7 +76,7 @@ const Navigation = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium text-sm lg:text-base"
                 >
                   {item.name}
                 </motion.button>
@@ -84,7 +84,7 @@ const Navigation = () => {
             </div>
 
             {/* Bouton contact desktop */}
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <Button size="sm" href="#contact">
                 Me contacter
               </Button>
@@ -95,7 +95,7 @@ const Navigation = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-3 rounded-lg bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary transition-colors ml-2"
+              className="lg:hidden p-3 rounded-lg bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary transition-colors ml-2"
             >
               {isOpen ? <X size={20} /> : <Menu size={20} />}
             </motion.button>
@@ -110,7 +110,7 @@ const Navigation = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 md:hidden"
+            className="fixed inset-0 z-40 lg:hidden"
           >
             {/* Overlay */}
             <motion.div
