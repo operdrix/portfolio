@@ -31,33 +31,30 @@ const Button: React.FC<ButtonProps> = ({
 
   const classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
 
-  const buttonContent = (
-    <motion.div
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      className="w-full h-full"
-    >
-      {children}
-    </motion.div>
-  );
-
   if (href) {
     return (
-      <Link href={href} className={classes}>
-        {buttonContent}
-      </Link>
+      <motion.div
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+      >
+        <Link href={href} className={classes}>
+          {children}
+        </Link>
+      </motion.div>
     );
   }
 
   return (
-    <button
+    <motion.button
       type={type}
       onClick={onClick}
       disabled={disabled}
       className={classes}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
     >
-      {buttonContent}
-    </button>
+      {children}
+    </motion.button>
   );
 };
 
