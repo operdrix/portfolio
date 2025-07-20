@@ -6,6 +6,7 @@ import Section from '@/components/ui/Section';
 import { projects } from '@/data/personal';
 import { motion } from 'framer-motion';
 import { Code, ExternalLink, Github, Globe, Star } from 'lucide-react';
+import Image from 'next/image';
 
 const Projects = () => {
   const featuredProjects = projects.filter(project => project.featured);
@@ -22,9 +23,11 @@ const Projects = () => {
         {/* Image du projet */}
         <div className="relative mb-6 overflow-hidden rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 h-48">
           {project.image ? (
-            <img
+            <Image
               src={project.image}
               alt={`Capture d'écran du projet ${project.title}`}
+              width={400}
+              height={192}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           ) : (
@@ -198,7 +201,7 @@ const Projects = () => {
           <h3 className="text-2xl font-bold mb-4">Envie de collaborer ?</h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Je suis toujours ouvert à de nouveaux projets et opportunités.
-            N'hésitez pas à me contacter pour discuter de vos idées !
+            N&apos;hésitez pas à me contacter pour discuter de vos idées !
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" href="#contact">
