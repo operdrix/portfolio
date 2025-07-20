@@ -3,17 +3,18 @@ import { Experience, PersonalInfo, Project, Skill, SocialLink } from '@/types';
 export const personalInfo: PersonalInfo = {
   name: "Olivier PERDRIX",
   title: "Développeur Web Full-Stack",
-  email: "olivier.perdrix@example.com", // À remplacer par ton vrai email
+  email: "olivierperdrix@live.fr", // À remplacer par ton vrai email
   location: "Lyon, France",
   github: "operdrix",
   linkedin: "olivier-perdrix", // À remplacer par ton LinkedIn
-  about: "Développeur web passionné avec 5 ans d'expérience, spécialisé dans les technologies modernes React, Next.js et Node.js. Actuellement en poste chez EDF à la centrale nucléaire du Bugey, je combine expertise technique et rigueur industrielle. Diplômé Master 2 en Ingénierie du Web de l'école EDSGI Lyon, je m'efforce de créer des applications robustes et performantes.",
-  avatar: "/avatar.jpg" // À ajouter plus tard
+  about: "Développeur web passionné, spécialisé dans les technologies modernes React, Next.js et Node.js. Actuellement en poste chez EDF à la centrale nucléaire du Bugey, je combine expertise technique et rigueur industrielle. Diplômé Master 2 en 2025 en Ingénierie du Web de l'école EDSGI Lyon, je m'efforce de créer des applications robustes et performantes.",
+  avatar: "/avatar.jpg", // À ajouter plus tard
+  birthDate: "1988-06-22"
 };
 
 export const skills: Skill[] = [
   // Frontend
-  { name: "React", icon: "react", level: 95, category: "frontend" },
+  { name: "React", icon: "react", level: 90, category: "frontend" },
   { name: "Next.js", icon: "nextjs", level: 90, category: "frontend" },
   { name: "TypeScript", icon: "typescript", level: 85, category: "frontend" },
   { name: "Tailwind CSS", icon: "tailwind", level: 90, category: "frontend" },
@@ -23,16 +24,17 @@ export const skills: Skill[] = [
   { name: "Node.js", icon: "nodejs", level: 80, category: "backend" },
   { name: "NestJS", icon: "nestjs", level: 75, category: "backend" },
   { name: "Express.js", icon: "express", level: 85, category: "backend" },
+  { name: "Strapi", icon: "strapi", level: 80, category: "backend" },
 
   // Database
-  { name: "PostgreSQL", icon: "postgresql", level: 80, category: "database" },
-  { name: "MariaDB", icon: "mariadb", level: 75, category: "database" },
-  { name: "MongoDB", icon: "mongodb", level: 70, category: "database" },
+  { name: "PostgreSQL", icon: "postgresql", level: 70, category: "database" },
+  { name: "MariaDB", icon: "mariadb", level: 80, category: "database" },
+  { name: "MongoDB", icon: "mongodb", level: 50, category: "database" },
 
   // DevOps
   { name: "Docker", icon: "docker", level: 80, category: "devops" },
   { name: "GitHub Actions", icon: "github", level: 75, category: "devops" },
-  { name: "Linux", icon: "linux", level: 70, category: "devops" },
+  { name: "Kubernetes", icon: "kubernetes", level: 40, category: "devops" },
 
   // Autres
   { name: "Git", icon: "git", level: 90, category: "other" },
@@ -43,35 +45,35 @@ export const skills: Skill[] = [
 export const experiences: Experience[] = [
   {
     id: "edf-bugey",
-    title: "Développeur Web Full-Stack",
+    title: "Ingénieur en SI",
     company: "EDF - Centrale Nucléaire du Bugey",
     location: "Saint-Vulbas, France",
-    startDate: "2023-01",
+    startDate: "2019-09",
     current: true,
     description: [
+      "Suivi de projets web avec nos développeurs",
+      "Référent collaboratif et animateur du réseau Citizen Dev'",
       "Développement d'applications web pour la gestion des opérations nucléaires",
       "Maintenance et amélioration des systèmes existants",
-      "Collaboration avec les équipes techniques et de sécurité",
-      "Respect des normes de sécurité nucléaire"
     ],
-    technologies: ["React", "Next.js", "TypeScript", "PostgreSQL", "Docker"],
+    technologies: ["React", "Next.js", "TypeScript", "PostgreSQL", "Jira", "Confluence", "Git"],
     logo: "/edf-logo.png"
   },
   {
-    id: "edsgi-master",
+    id: "esgi-master",
     title: "Master 2 Ingénierie du Web",
-    company: "École EDSGI Lyon",
+    company: "École ESGI Lyon",
     location: "Lyon, France",
-    startDate: "2021-09",
-    endDate: "2023-06",
-    current: false,
+    startDate: "2023-09",
+    endDate: "2025-06",
+    current: true,
     description: [
       "Formation spécialisée en développement web moderne",
       "Projets pratiques avec technologies actuelles",
       "Mémoire sur l'optimisation des performances web"
     ],
-    technologies: ["React", "Next.js", "Node.js", "TypeScript", "Docker"],
-    logo: "/edsgi-logo.png"
+    technologies: ["React", "Vue.js", "Node.js", "TypeScript", "Docker", "Kubernetes", "CI/CD", "SEO", "UX/UI"],
+    logo: "/esgi-logo.png"
   }
 ];
 

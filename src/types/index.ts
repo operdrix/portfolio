@@ -47,6 +47,7 @@ export interface PersonalInfo {
   linkedin?: string;
   about: string;
   avatar?: string;
+  birthDate: string;
 }
 
 export interface Section {

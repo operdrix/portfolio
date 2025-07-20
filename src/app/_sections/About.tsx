@@ -8,9 +8,9 @@ import { Award, Calendar, Github, Linkedin, Mail, MapPin, User } from 'lucide-re
 
 const About = () => {
   const stats = [
-    { label: "Années d'expérience", value: "5+" },
-    { label: "Projets réalisés", value: "20+" },
-    { label: "Technologies maîtrisées", value: "15+" },
+    { label: "Années d'expérience", value: "2+" },
+    { label: "Projets réalisés", value: "10+" },
+    { label: "Technologies maîtrisées", value: "10+" },
     { label: "Formation", value: "Master 2" }
   ];
 
@@ -19,7 +19,7 @@ const About = () => {
     "Expertise en bases de données PostgreSQL et MariaDB",
     "Déploiement et CI/CD avec Docker et GitHub Actions",
     "Travail en environnement industriel (EDF - Centrale Nucléaire)",
-    "Formation spécialisée en Ingénierie du Web (EDSGI Lyon)"
+    "Formation spécialisée en Ingénierie du Web (ESGI Lyon)"
   ];
 
   return (
@@ -79,11 +79,13 @@ const About = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Calendar className="w-5 h-5 text-muted-foreground" />
-                <span className="text-muted-foreground">37 ans</span>
+                <span className="text-muted-foreground">
+                  {new Date().getFullYear() - new Date(personalInfo.birthDate).getFullYear()} ans
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <Award className="w-5 h-5 text-muted-foreground" />
-                <span className="text-muted-foreground">Master 2 Ingénierie du Web - EDSGI Lyon</span>
+                <span className="text-muted-foreground">Master 2 Ingénierie du Web - ESGI Lyon</span>
               </div>
             </div>
           </Card>
@@ -144,15 +146,15 @@ const About = () => {
           {/* Carte de présentation EDF */}
           <Card className="p-6 border-l-4 border-primary">
             <div className="flex items-start gap-4">
-              <div className="p-3 rounded-full bg-primary/10">
+              <div className="p-3 rounded-full bg-primary/10 animate-pulse-scale">
                 <div className="w-6 h-6 bg-primary rounded-full" />
               </div>
               <div>
                 <h4 className="font-semibold mb-2">Actuellement chez EDF</h4>
                 <p className="text-sm text-muted-foreground">
-                  Développeur web à la centrale nucléaire du Bugey,
+                  Ingénieur en SI à la centrale nucléaire du Bugey,
                   je combine expertise technique et rigueur industrielle
-                  pour créer des applications robustes et sécurisées.
+                  pour mener à bien mes missions.
                 </p>
               </div>
             </div>

@@ -59,17 +59,30 @@ const Experience = () => {
                 <Card glass className="p-6">
                   {/* En-tête */}
                   <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-primary mb-1">
-                        {experience.title}
-                      </h3>
-                      <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                        <Building className="w-4 h-4" />
-                        <span className="font-medium">{experience.company}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <MapPin className="w-4 h-4" />
-                        <span>{experience.location}</span>
+                    <div className="flex items-start gap-4 flex-1">
+                      {/* Logo de l'entreprise */}
+                      {experience.logo && (
+                        <div className="w-12 h-12 rounded-lg bg-muted/50 border border-border/50 flex items-center justify-center flex-shrink-0">
+                          <img
+                            src={experience.logo}
+                            alt={`Logo ${experience.company}`}
+                            className="w-8 h-8 object-contain"
+                          />
+                        </div>
+                      )}
+
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-primary mb-1">
+                          {experience.title}
+                        </h3>
+                        <div className="flex items-center gap-2 text-muted-foreground mb-2">
+                          <Building className="w-4 h-4" />
+                          <span className="font-medium">{experience.company}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <MapPin className="w-4 h-4" />
+                          <span>{experience.location}</span>
+                        </div>
                       </div>
                     </div>
 

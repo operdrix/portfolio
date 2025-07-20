@@ -184,7 +184,7 @@ const Skills = () => {
               </div>
               <h4 className="font-semibold mb-2">Architecture Data</h4>
               <p className="text-sm text-muted-foreground">
-                Conception et optimisation de bases de données PostgreSQL et MariaDB
+                Conception et optimisation de bases de données PostgreSQL et MariaDb
               </p>
             </div>
 
