@@ -19,12 +19,22 @@ const Projects = () => {
       transition={{ duration: 0.8, delay: index * 0.2 }}
     >
       <Card glass className="p-6 h-full group">
-        {/* Image du projet (placeholder pour l'instant) */}
-        <div className="relative mb-6 overflow-hidden rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 h-48 flex items-center justify-center">
-          <div className="text-center">
-            <Code className="w-16 h-16 text-primary mx-auto mb-4" />
-            <p className="text-muted-foreground">Image du projet</p>
-          </div>
+        {/* Image du projet */}
+        <div className="relative mb-6 overflow-hidden rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 h-48">
+          {project.image ? (
+            <img
+              src={project.image}
+              alt={`Capture d'écran du projet ${project.title}`}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center">
+              <div className="text-center">
+                <Code className="w-16 h-16 text-primary mx-auto mb-4" />
+                <p className="text-muted-foreground">Image du projet</p>
+              </div>
+            </div>
+          )}
 
           {/* Overlay avec liens */}
           <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">

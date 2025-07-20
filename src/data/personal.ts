@@ -115,7 +115,7 @@ export const projects: Project[] = [
     id: "portfolio",
     title: "Portfolio Personnel",
     description: "Portfolio moderne développé avec Next.js et Tailwind CSS, présentant mes compétences et projets avec un design futuriste.",
-    image: "/projects/portfolio.jpg",
+    image: "/projects/portfolio-image.png",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     githubUrl: "https://github.com/operdrix/portfolio",
     liveUrl: "https://olivier-perdrix.vercel.app",
@@ -127,19 +127,20 @@ export const projects: Project[] = [
     title: "CRM Axignis",
     description: "Projet de fin d'études pour la société Axignis. Application complète de gestion des ERP.",
     image: "/projects/axignis-image.png",
-    technologies: ["NestJS", "TypeScript", "PostgreSQL", "Docker", "JWT"],
+    technologies: ["NestJS", "Next.js", "TypeScript", "PostgreSQL", "Docker", "JWT"],
     githubUrl: "https://github.com/Projet-annuel-Axignis",
     featured: true,
-    category: "api"
+    category: "web"
   },
   {
-    id: "task-manager",
-    title: "Gestionnaire de Tâches",
-    description: "Application web de gestion de tâches avec interface moderne et fonctionnalités avancées.",
-    image: "/projects/task-manager.jpg",
-    technologies: ["React", "Node.js", "MongoDB", "Express.js"],
-    githubUrl: "https://github.com/operdrix/task-manager",
-    featured: false,
+    id: "Skyjo-app",
+    title: "Skyjo en ligne",
+    description: "Un Skyjo en ligne pour jouer en simultané jusqu'à 4 joueurs",
+    image: "/projects/skyjo-image-2.png",
+    technologies: ["React", "Node.js", "Fastify", "MariaDB", "Docker", "CI/CD"],
+    githubUrl: "https://github.com/operdrix/skyjo-react",
+    liveUrl: "https://skyjo.labodolivier.com/",
+    featured: true,
     category: "web"
   }
 ];
@@ -147,17 +148,17 @@ export const projects: Project[] = [
 export const socialLinks: SocialLink[] = [
   {
     name: "GitHub",
-    url: "https://github.com/operdrix",
+    url: `https://github.com/${personalInfo.github}`,
     icon: "github"
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/olivier-perdrix",
+    url: `https://www.linkedin.com/in/${personalInfo.linkedin}`,
     icon: "linkedin"
   },
   {
     name: "Email",
-    url: "mailto:olivier.perdrix@example.com",
+    url: `mailto:${personalInfo.email}`,
     icon: "mail"
   }
 ]; 

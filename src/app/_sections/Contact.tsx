@@ -48,8 +48,7 @@ const Contact = () => {
             <h3 className="text-2xl font-bold mb-6">Parlons de votre projet</h3>
             <p className="text-muted-foreground mb-8 leading-relaxed">
               Je suis toujours intéressé par de nouvelles opportunités et collaborations.
-              Que ce soit pour un projet freelance, un poste permanent ou simplement
-              pour échanger sur le développement web, n'hésitez pas à me contacter !
+              N'hésitez pas à me contacter !
             </p>
 
             <div className="space-y-4">
