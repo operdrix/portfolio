@@ -84,6 +84,7 @@ export const experiences: Experience[] = [
     endDate: "2023-06",
     current: false,
     description: [
+      "Début de reprise d'études après 10 ans d'expérience professionnelle.",
       "Formation en alternance en développement web et technologies modernes",
       "Projets pratiques et mise en œuvre de solutions informatiques",
       "Administration d'environnements système et réseaux",
@@ -92,6 +93,21 @@ export const experiences: Experience[] = [
     technologies: ["HTML/CSS", "JavaScript", "PHP", "MySQL", "Git", "Linux", "Réseaux", "Sécurité"],
     logo: "/esgi-logo.png"
   },
+  {
+    id: "edf-past",
+    title: "Technicien puis Chargé d'affaire Tranche en Marche",
+    company: "EDF - Centrale Nucléaire du Bugey",
+    location: "Saint-Vulbas, France",
+    startDate: "2009-09",
+    endDate: "2019-09",
+    current: false,
+    description: [
+      "Technicien essayeur et chargé de travaux dans le domaine des Essais périodiques.",
+      "Chargé d'affaire tranche en marche dans le même domaine.",
+    ],
+    logo: "/edf-logo.png"
+  },
+
 ];
 
 export const projects: Project[] = [
@@ -107,12 +123,12 @@ export const projects: Project[] = [
     category: "web"
   },
   {
-    id: "ecommerce-api",
-    title: "API E-commerce",
-    description: "API REST complète pour une plateforme e-commerce avec authentification, gestion des produits et paiements.",
-    image: "/projects/ecommerce-api.jpg",
+    id: "axigni-app",
+    title: "CRM Axignis",
+    description: "Projet de fin d'études pour la société Axignis. Application complète de gestion des ERP.",
+    image: "/projects/axignis-image.png",
     technologies: ["NestJS", "TypeScript", "PostgreSQL", "Docker", "JWT"],
-    githubUrl: "https://github.com/operdrix/ecommerce-api",
+    githubUrl: "https://github.com/Projet-annuel-Axignis",
     featured: true,
     category: "api"
   },

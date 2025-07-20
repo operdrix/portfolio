@@ -127,7 +127,7 @@ const Experience = () => {
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2">
-                    {experience.technologies.map((tech, techIndex) => (
+                    {experience.technologies && experience.technologies.map((tech, techIndex) => (
                       <motion.span
                         key={tech}
                         initial={{ opacity: 0, scale: 0.8 }}

@@ -16,7 +16,7 @@ export interface Experience {
   endDate?: string;
   current: boolean;
   description: string[];
-  technologies: string[];
+  technologies?: string[];
   logo?: string;
 }
 
