@@ -52,7 +52,7 @@ const Navigation = () => {
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-16 w-full">
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -62,7 +62,7 @@ const Navigation = () => {
               <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">OP</span>
               </div>
-              <span className="font-bold text-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="font-bold text-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hidden sm:block">
                 {personalInfo.name.split(' ')[0]}
               </span>
             </motion.div>
@@ -95,9 +95,9 @@ const Navigation = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary transition-colors"
+              className="md:hidden p-3 rounded-lg bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary transition-colors ml-2"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
             </motion.button>
           </div>
         </div>
