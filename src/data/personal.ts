@@ -118,7 +118,7 @@ export const projects: Project[] = [
     image: "/projects/portfolio-image.png",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     githubUrl: "https://github.com/operdrix/portfolio",
-    liveUrl: "https://olivier-perdrix.vercel.app",
+    liveUrl: "https://labodolivier.com",
     featured: true,
     category: "web"
   },
@@ -142,7 +142,28 @@ export const projects: Project[] = [
     liveUrl: "https://skyjo.labodolivier.com/",
     featured: true,
     category: "web"
+  },
+  {
+    id: "Sevices.ceo",
+    title: "Services.ceo",
+    description: "Une plateforme de mise en relation entre entreprises et particuliers pour des services de proximité. Boostée par l'IA",
+    image: "/projects/services-image.png",
+    technologies: ["React", "Nest.JS", "Tailwind CSS", "MUI", "n8n"],
+    githubUrl: "https://github.com/Hackathon-Grp-1",
+    liveUrl: "https://services.loan-cb.fr/",
+    featured: false,
+    category: "web"
+  },
+  {
+    id: "octopus",
+    title: "Octopus PSP",
+    description: "Logiciel de gestion des compétitions de PSP. Logiciel officiel de la fédération française FFESSM de PSP. Ce logiciel permet la gestion complète des épreuves et compétiteurs, de l'inscription à l'édition des résultats.",
+    image: "/projects/octopus-image.png",
+    technologies: ["Excel", "VBA"],
+    featured: false,
+    category: "other"
   }
+
 ];
 
 export const socialLinks: SocialLink[] = [
