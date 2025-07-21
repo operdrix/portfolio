@@ -162,6 +162,16 @@ export const projects: Project[] = [
     technologies: ["Excel", "VBA"],
     featured: false,
     category: "other"
+  },
+  {
+    id: "github",
+    title: "Autres projets",
+    description: "Autres projets sur mon GitHub",
+    image: "/projects/github-image.svg",
+    technologies: ["Repositories", "Actions", "Projects"],
+    githubUrl: "https://github.com/operdrix",
+    featured: false,
+    category: "other"
   }
 
 ];
