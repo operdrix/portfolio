@@ -19,7 +19,7 @@ const Projects = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
     >
-      <Card glass className="p-6 h-full group">
+      <Card glass className="p-6 h-full group flex flex-col">
         {/* Image du projet */}
         <div className="relative mb-6 overflow-hidden rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 h-48">
           {project.image ? (
@@ -69,7 +69,7 @@ const Projects = () => {
         </div>
 
         {/* Contenu */}
-        <div className="space-y-4">
+        <div className="space-y-4 flex-1 flex flex-col">
           {/* En-tête */}
           <div className="flex items-start justify-between">
             <h3 className="text-xl font-bold text-primary group-hover:text-secondary transition-colors">
@@ -105,7 +105,7 @@ const Projects = () => {
           </div>
 
           {/* Boutons d'action */}
-          <div className="flex gap-3 pt-4">
+          <div className="flex gap-3 mt-auto">
             {project.githubUrl && (
               <Button
                 variant="outline"
