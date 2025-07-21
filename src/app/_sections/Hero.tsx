@@ -88,7 +88,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="flex justify-center gap-6 mb-12"
+          className="flex justify-center gap-6 mb"
         >
           <motion.a
             href={`https://github.com/${personalInfo.github}`}
@@ -123,7 +123,7 @@ const Hero = () => {
         {/* Bouton scroll */}
         <motion.button
           onClick={scrollToAbout}
-          className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 p-3 rounded-full bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300 z-10"
+          className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 p-3 rounded-full bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300 z-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.2 }}
