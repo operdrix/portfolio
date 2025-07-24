@@ -55,3 +55,9 @@ coverage
 # Logs
 logs
 *.log 
+
+.git
+.next/
+.next/cache/
+.next/cache/
+Dockerfile
