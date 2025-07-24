@@ -76,3 +76,17 @@ jobs:
               -p ${{ secrets.APP_PORT }}:3000 \
               --restart unless-stopped \
               ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-app:latest
+  create-release:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: |
+            🚀 Nouvelle release de ${{ github.ref_name }}.
+            Consulte les logs pour plus de détails !
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

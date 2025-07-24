@@ -1,10 +1,15 @@
 # 🚀 Portfolio Olivier PERDRIX
 
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/operdrix/portfolio?logo=github)](https://github.com/operdrix/portfolio/releases)
+[![CI Lint & Build](https://github.com/operdrix/portfolio/actions/workflows/lint-build.yml/badge.svg)](https://github.com/operdrix/portfolio/actions/workflows/lint-build.yml)
+[![Production Release & Deploy](https://github.com/operdrix/portfolio/actions/workflows/release.yml/badge.svg)](https://github.com/operdrix/portfolio/actions/workflows/release.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Un portfolio moderne et futuriste développé avec Next.js, TypeScript et Tailwind CSS.
 
+---
 ## ✨ Fonctionnalités
 
-- 🎨 **Design Futuriste** - Interface moderne avec animations fluides
 - 📱 **Responsive** - Optimisé pour tous les appareils
 - ⚡ **Performance** - Chargement rapide avec Next.js 15
 - 🎭 **Animations** - Animations fluides avec Framer Motion
@@ -19,7 +24,7 @@ Un portfolio moderne et futuriste développé avec Next.js, TypeScript et Tailwi
 - **Styling** : Tailwind CSS v4
 - **Animations** : Framer Motion
 - **Icônes** : Lucide React
-- **Déploiement** : Vercel (recommandé)
+- **Déploiement** : Github Action
 
 ## 🚀 Installation
 
@@ -73,8 +78,7 @@ portfolio/
 │   │   └── personal.ts        # Données personnelles
 │   └── types/
 │       └── index.ts           # Types TypeScript
-├── public/                    # Assets statiques
-└── TODO.md                    # Plan d'action
+└── public/                    # Assets statiques
 ```
 
 ## 🎨 Palette de Couleurs
@@ -85,54 +89,11 @@ portfolio/
 - **Fond** : `#0A0A0A` (Noir profond)
 - **Texte** : `#FFFFFF` (Blanc pur)
 
-## 📱 Sections du Portfolio
-
-### 🏠 Hero Section
-- Introduction avec animations futuristes
-- Badge de disponibilité
-- Liens sociaux animés
-- Particules flottantes
-
-### 👤 À Propos
-- Informations personnelles
-- Statistiques (expérience, projets)
-- Points forts
-- Présentation EDF
-
-### 💻 Compétences
-- Barres de progression animées
-- Catégorisation par domaine
-- Statistiques globales
-- Expertise spécialisée
-
-### 📈 Expérience
-- Timeline moderne
-- Expérience EDF actuelle
-- Formation EDSGI Lyon
-- Technologies utilisées
-
-### 🚀 Projets
-- Cartes de projets avec hover effects
-- Projets mis en avant
-- Liens GitHub et demo
-- Technologies par projet
-
-### 📞 Contact
-- Formulaire de contact
-- Informations de contact
-- Liens sociaux
-- Call to action
-
 ## 🔧 Configuration
 
 ### Variables d'Environnement
 
-Créer un fichier `.env.local` :
-
-```env
-NEXT_PUBLIC_SITE_URL=https://olivier-perdrix.vercel.app
-NEXT_PUBLIC_GA_ID=your-google-analytics-id
-```
+Créer un fichier `.env.local` à partir de `.env.example` et modifier les clés
 
 ### Personnalisation
 
@@ -142,56 +103,43 @@ NEXT_PUBLIC_GA_ID=your-google-analytics-id
 
 ## 🚀 Déploiement
 
-### Vercel (Recommandé)
+Le déploiement en production est totalement automatisé grâce à **GitHub Actions** et **Docker**.
 
-1. Connecter le repository GitHub à Vercel
-2. Configurer les variables d'environnement
-3. Déployer automatiquement
+### 🚦 **Workflow CI/CD**
 
-### Autres Plateformes
+- **Lint & Build** : sur chaque PR et push (`.github/workflows/lint-build.yml`)
+- **Release & Déploiement** : à chaque création de tag (`.github/workflows/release.yml`)
+    - Build et push de l'image Docker (taguée)
+    - Déploiement automatique sur VPS via SSH
 
-Le projet peut être déployé sur :
-- Netlify
-- Railway
-- DigitalOcean App Platform
-- AWS Amplify
+### 🔒 **Secrets nécessaires (à configurer sur GitHub)**
 
-## 📊 Performance
+- `DOCKERHUB_USERNAME` / `DOCKERHUB_TOKEN` : accès au Docker Hub pour push/pull l'image
+- `DEPLOY_HOST` / `DEPLOY_PORT` : IP/port du VPS cible
+- `DEPLOY_USER` / `DEPLOY_SSH_KEY` : utilisateur et clé privée SSH pour déploiement
+- `APP_PORT` : port d'exposition sur le VPS
 
-- **Lighthouse Score** : 95+ sur tous les critères
-- **First Contentful Paint** : < 1.5s
-- **Largest Contentful Paint** : < 2.5s
-- **Cumulative Layout Shift** : < 0.1
+### 📦 **Versionnage & Release**
 
-## 🤝 Contribution
+- **Créer une release** :  
+  1. Exécuter la commande ./release.sh 1.2.3
+  2. L'image Docker est taguée et déployée automatiquement
 
-Les contributions sont les bienvenues ! Pour contribuer :
+### 💡 **Pour personnaliser votre déploiement**  
+Voir les secrets et les fichiers `.github/workflows/`
 
-1. Fork le projet
-2. Créer une branche feature (`git checkout -b feature/AmazingFeature`)
-3. Commit les changements (`git commit -m 'Add some AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
+---
+
 
 ## 📄 Licence
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+Ce projet est sous licence MIT.
 
 ## 👨‍💻 Auteur
 
 **Olivier PERDRIX**
 - GitHub : [@operdrix](https://github.com/operdrix)
 - LinkedIn : [olivier-perdrix](https://linkedin.com/in/olivier-perdrix)
-- Email : olivier.perdrix@example.com
-
-## 🙏 Remerciements
-
-- [Next.js](https://nextjs.org/) - Framework React
-- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS
-- [Framer Motion](https://www.framer.com/motion/) - Animations
-- [Lucide React](https://lucide.dev/) - Icônes
-- [Vercel](https://vercel.com/) - Déploiement
-
----
+- Email : olivierperdrix_at_live.fr
 
 ⭐ Si ce projet vous plaît, n'hésitez pas à lui donner une étoile !
