@@ -3,8 +3,6 @@ FROM node:22-alpine AS base
 
 # Installer les dépendances nécessaires et mettre à jour les packages
 RUN apk add --no-cache libc6-compat && \
-    apk update && \
-    apk upgrade && \
     rm -rf /var/cache/apk/*
 
 # Étape de dépendances
