@@ -144,19 +144,19 @@ const Footer = () => {
         />
 
         {/* Copyright et bouton retour en haut */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex items-center gap-2 text-sm text-muted-foreground"
+            className="flex flex-col sm:flex-row items-center gap-2 text-sm text-muted-foreground flex-wrap"
           >
             <span>© {currentYear} {personalInfo.name}. Tous droits réservés.</span>
             <span className="flex items-center gap-1">
               Fait avec <Heart className="w-4 h-4 text-red-500" /> en France
               <div className="inline-flex ml-1 relative">
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-6 h-6 drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] dark:drop-shadow-none" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
                     fill="url(#frenchFlag)"
