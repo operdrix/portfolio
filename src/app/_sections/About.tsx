@@ -99,8 +99,9 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="h-full" // Ajouté pour forcer la hauteur
               >
-                <Card className="text-center p-6">
+                <Card className="text-center p-6 h-full"> {/* Ajouté h-full ici */}
                   <div className="text-3xl font-bold text-primary mb-2">{stat.value}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </Card>
