@@ -12,7 +12,7 @@ VERSION=$1
 
 echo "Bumping version to $VERSION..."
 npm version $VERSION --no-git-tag-version
-git add package.json
+git add package.json package-lock.json
 git commit -m "chore: bump version to $VERSION"
 git tag v$VERSION
 git push origin main
