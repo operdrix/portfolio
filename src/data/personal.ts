@@ -7,7 +7,7 @@ export const personalInfo: PersonalInfo = {
   location: "Lyon, France",
   github: "operdrix",
   linkedin: "olivier-perdrix", // À remplacer par ton LinkedIn
-  about: "Développeur web passionné, spécialisé dans les technologies modernes React, Next.js et Node.js. Actuellement en poste chez EDF à la centrale nucléaire du Bugey, je combine expertise technique et rigueur industrielle. Diplômé Master 2 en 2025 en Ingénierie du Web de l'école EDSGI Lyon, je m'efforce de créer des applications robustes et performantes.",
+  about: "Développeur web passionné, spécialisé dans les technologies modernes React, Next.js et Node.js. Actuellement en poste chez EDF à la centrale nucléaire du Bugey, je combine expertise technique et rigueur industrielle. Diplômé Master 2 en 2025 en Ingénierie du Web de l'école ESGI Lyon, je m'efforce de créer des applications robustes et performantes.",
   avatar: "/avatar.jpg", // À ajouter plus tard
   birthDate: "1988-06-22"
 };
