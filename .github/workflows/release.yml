@@ -89,4 +89,4 @@ jobs:
             🚀 Nouvelle release de ${{ github.ref_name }}.
             Consulte les logs pour plus de détails !
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
