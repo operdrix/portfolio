@@ -3,6 +3,7 @@
 import { personalInfo, socialLinks } from '@/data/personal';
 import { motion } from 'framer-motion';
 import { ArrowUp, Github, Heart, Linkedin, Mail, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -172,6 +173,23 @@ const Footer = () => {
                 </svg>
               </div>
             </span>
+            <div className="flex items-center gap-2">
+              <a
+                href="https://github.com/operdrix/portfolio/releases"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 inline-block align-middle"
+              >
+                <Image
+                  src="https://img.shields.io/github/v/release/operdrix/portfolio?logo=github"
+                  alt="GitHub release (latest by date)"
+                  width={110}
+                  height={24}
+                  className="h-6 w-auto"
+                  priority
+                />
+              </a>
+            </div>
           </motion.div>
 
           <motion.button

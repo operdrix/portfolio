@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 
+/** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
   // Configuration pour Docker
   output: 'standalone',
@@ -32,6 +33,16 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.shields.io',
+      },
+    ],
+    dangerouslyAllowSVG: true,
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
