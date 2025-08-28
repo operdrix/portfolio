@@ -91,10 +91,6 @@ portfolio/
 
 ## 🔧 Configuration
 
-### Variables d'Environnement
-
-Créer un fichier `.env.local` à partir de `.env.example` et modifier les clés
-
 ### Personnalisation
 
 1. **Données personnelles** : Modifier `src/data/personal.ts`
@@ -118,12 +114,14 @@ Le déploiement en production est totalement automatisé grâce à **GitHub Acti
 - `DEPLOY_HOST` / `DEPLOY_PORT` : IP/port du VPS cible
 - `DEPLOY_USER` / `DEPLOY_SSH_KEY` : utilisateur et clé privée SSH pour déploiement
 - `APP_PORT` : port d'exposition sur le VPS
+- `EMAILJS_PUBLIC_KEY` / `EMAILJS_SERVICE_ID` / `EMAILJS_TEMPLATE_ID` : identifiants EmailJS pour l'envoi de mails avec template.
 
 ### 📦 **Versionnage & Release**
 
 - **Créer une release** :  
-  1. Exécuter la commande ./release.sh 1.2.3
-  2. L'image Docker est taguée et déployée automatiquement
+  1. Commiter tous les changements sans push
+  2. Exécuter la commande ./release.sh 1.2.3
+  3. L'image Docker est taguée et déployée automatiquement
 
 ### 💡 **Pour personnaliser votre déploiement**  
 Voir les secrets et les fichiers `.github/workflows/`
