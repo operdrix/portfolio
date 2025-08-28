@@ -93,14 +93,17 @@ const Navigation = () => {
             </div>
 
             {/* Menu hamburger */}
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-3 rounded-lg bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary transition-colors ml-2"
-            >
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
-            </motion.button>
+            <div className="flex items-center gap-4 lg:hidden">
+              <ThemeToggle />
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setIsOpen(!isOpen)}
+                className="lg:hidden p-3 rounded-lg bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary transition-colors ml-2"
+              >
+                {isOpen ? <X size={20} /> : <Menu size={20} />}
+              </motion.button>
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -132,19 +135,13 @@ const Navigation = () => {
               className="absolute right-0 top-0 h-full w-80 bg-background/95 backdrop-blur-md border-l border-border/50"
             >
               <div className="p-6">
-                <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center justify-between mb-8 mt-14">
                   <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
                       <span className="text-white font-bold text-sm">OP</span>
                     </div>
                     <span className="font-bold text-lg">{personalInfo.name}</span>
                   </div>
-                  {/* <button
-                    onClick={() => setIsOpen(false)}
-                    className="p-2 rounded-lg bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <X size={24} />
-                  </button> */}
                 </div>
 
                 <div className="space-y-4">
@@ -163,9 +160,6 @@ const Navigation = () => {
                 </div>
 
                 <div className="mt-8 space-y-4">
-                  <div className="flex justify-center">
-                    <ThemeToggle />
-                  </div>
                   <Button size="lg" href="#contact" className="w-full">
                     Me contacter
                   </Button>

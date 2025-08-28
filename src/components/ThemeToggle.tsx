@@ -22,7 +22,7 @@ const ThemeToggle = () => {
       {/* Bouton principal */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative p-2 rounded-lg bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300"
+        className="relative rounded-lg bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         aria-label="Changer le thème"
@@ -34,7 +34,7 @@ const ThemeToggle = () => {
             animate={{ rotate: 0, opacity: 1 }}
             exit={{ rotate: 90, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="flex items-center justify-center"
+            className="flex items-center justify-center p-3 lg:p-2"
           >
             {resolvedTheme === 'light' ? (
               <Sun size={20} className="text-yellow-500" />
