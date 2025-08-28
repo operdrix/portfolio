@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       {
         url: '/og.png',
         width: 801,
-        height: 564,
+        height: 410,
         alt: 'Olivier PERDRIX - Développeur Web Full-Stack',
       },
     ],
