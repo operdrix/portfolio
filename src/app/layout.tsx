@@ -30,13 +30,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Olivier PERDRIX - Développeur Web Full-Stack",
     description: "Développeur web passionné avec 5 ans d'expérience, spécialisé dans React, Next.js, TypeScript et Node.js.",
-    url: 'https://olivier-perdrix.vercel.app',
+    url: 'https://labodolivier.com',
     siteName: 'Olivier PERDRIX Portfolio',
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
+        url: '/og.png',
+        width: 801,
+        height: 564,
         alt: 'Olivier PERDRIX - Développeur Web Full-Stack',
       },
     ],
