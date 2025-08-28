@@ -5,6 +5,7 @@ import { personalInfo } from '@/data/personal';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronUp, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,7 +85,8 @@ const Navigation = () => {
             </div>
 
             {/* Bouton contact desktop */}
-            <div className="hidden lg:block">
+            <div className="hidden lg:flex items-center gap-4">
+              <ThemeToggle />
               <Button size="sm" href="#contact">
                 Me contacter
               </Button>
@@ -160,7 +162,10 @@ const Navigation = () => {
                   ))}
                 </div>
 
-                <div className="mt-8">
+                <div className="mt-8 space-y-4">
+                  <div className="flex justify-center">
+                    <ThemeToggle />
+                  </div>
                   <Button size="lg" href="#contact" className="w-full">
                     Me contacter
                   </Button>

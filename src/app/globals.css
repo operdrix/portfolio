@@ -40,9 +40,26 @@
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
 }
 
-/* Mode clair (optionnel) */
+/* Thèmes */
+[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --border: #e5e7eb;
+}
+
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --muted: #1f2937;
+  --muted-foreground: #9ca3af;
+  --border: #374151;
+}
+
+/* Fallback pour le mode auto */
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not([data-theme]) {
     --background: #ffffff;
     --foreground: #0a0a0a;
     --muted: #f3f4f6;
