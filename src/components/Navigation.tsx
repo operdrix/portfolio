@@ -139,12 +139,12 @@ const Navigation = () => {
                     </div>
                     <span className="font-bold text-lg">{personalInfo.name}</span>
                   </div>
-                  <button
+                  {/* <button
                     onClick={() => setIsOpen(false)}
                     className="p-2 rounded-lg bg-muted/50 border border-border/50 text-muted-foreground hover:text-primary transition-colors"
                   >
                     <X size={24} />
-                  </button>
+                  </button> */}
                 </div>
 
                 <div className="space-y-4">
