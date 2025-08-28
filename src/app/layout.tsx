@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://olivier-perdrix.vercel.app'),
+  metadataBase: new URL('https://labodolivier.com'),
   openGraph: {
     title: "Olivier PERDRIX - Développeur Web Full-Stack",
     description: "Développeur web passionné avec 5 ans d'expérience, spécialisé dans React, Next.js, TypeScript et Node.js.",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Olivier PERDRIX - Développeur Web Full-Stack',
     description: 'Développeur web passionné avec 5 ans d\'expérience, spécialisé dans React, Next.js, TypeScript et Node.js.',
-    images: ['/og-image.jpg'],
+    images: ['/og.png'],
   },
   robots: {
     index: true,
